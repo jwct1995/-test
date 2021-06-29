@@ -1,0 +1,64 @@
+<p><style>
+#Div-TempoarySuspensionInPersonService
+{
+    position: absolute;
+    right: 0px;
+    z-index: 9999;
+    bottom: 0px;
+    background-color: #EF8A4E;
+    /*text-shadow: 2px 2px #000000;*/
+    padding: 7px 20px 15px 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+</style> <style>
+#Div-TempoarySuspensionInPersonService a{color: #daefff;}
+#Div-TempoarySuspensionInPersonService a:hover {color: #00ffb8;}
+</style> <style>
+@media (pointer:none), (pointer:coarse)
+{
+	@media screen and (orientation:portrait)
+	{
+        #Div-TempoarySuspensionInPersonService
+        {
+            padding: 3px 5px 6px 3px;
+            font-size: 6px;
+        }
+        #Txt2-TempoarySuspensionInPersonService{display:unset;}
+	}
+	@media screen and (orientation:landscape)
+	{
+        #Div-TempoarySuspensionInPersonService
+        {
+            padding: 7px 20px 15px 10px;
+            font-size: 20px;
+        }
+	}
+}
+
+</style> <script type="text/javascript">
+function GenerateTxtTempoarySuspensionInPersonService()
+{
+    if(screen.availHeight > screen.availWidth)
+    {$("#Div-TempoarySuspensionInPersonService").html("In-person services <br\/>will resume on 4 Jul. <br\/>Register from 30 June, 9am.");}
+    else
+    {$("#Div-TempoarySuspensionInPersonService").html("In-person services will resume on 4 Jul. <br\/>Register from 30 June, 9am.");}
+}
+</script> <script type="text/javascript">
+    $(function()
+    {
+        /*del*/ $(".bannerwrapper").append($("#Div-TempoarySuspensionInPersonService"));
+        $("#Div-TempoarySuspensionInPersonService").css("display","unset");
+        GenerateTxtTempoarySuspensionInPersonService();
+        $( window ).resize(function(){ GenerateTxtTempoarySuspensionInPersonService() });
+    });
+    $(document).ready(function()
+    {
+        /*del*/ $(".bannerwrapper").append($("#Div-TempoarySuspensionInPersonService"));
+    });
+</script></p>
+<div id="Div-TempoarySuspensionInPersonService" style="display: none;"><!--Temporary Suspension
+    of
+    In-Person Services
+    until 13 June 2021--></div>

@@ -1,0 +1,390 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    iframe{width: 800px;height: 450px;}
+    .btn
+    {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .btn:hover
+    {
+        background-color: #547290;
+        transition: 0.5s;
+        font-size: 21px;
+    }
+    a{transition: 0.3s;}
+    #pc2
+    {
+        position: fixed;
+        right: -130px;
+        padding: 3px 7px 3px 7px;
+        width: 300px;
+        bottom:40px;
+        border-style: hidden;
+    }
+    #pc2 tr{ background-color:#FFFFFF;}
+    #pc2 td{ padding:0px;}
+    #pc2 a
+    {
+        width: 100%;
+        font-size: 15px;
+        margin: 0px;
+    }
+    #divToTop
+    {
+        position: fixed;
+        right: 3%;
+        bottom: 3%;
+        z-index: 99;
+    }
+    #divToTop a
+    {
+        text-decoration: none;
+        background-color: #616161;
+        padding: 6px;
+        color: white;
+    }
+    #divToTop{display:none;}
+    #divToTop a:hover{background-color: #9e9e9e;color: bold;}
+    #pc {
+        display: block;
+        text-align: center;
+    }
+</style>
+<style>
+    h2
+    {
+        width: 100%;
+        background: #b59cb5;
+        color: white;
+        font-weight: bold;
+        line-height: 40px;
+        text-align: center;
+    }
+</style>
+
+<style>
+    #divMain{width:80%;}
+    #divMainTop{width:80%;}
+    [name="btn"]
+    {
+        display: inline-block;
+        border-style: none;
+        font-weight: bold;
+        font-size: larger;
+        cursor: pointer;
+        margin:5px;
+        padding: 3px 13px 3px 13px;
+    }
+</style>
+<style>
+    #divBtn
+    {
+        display: block;
+        text-align: center;
+    }
+</style>
+<style>
+    #btnH,#btnP,#btnW,#btnE,#btnTT
+    {
+        background-color: #B59CB5; color:#FFFFFF; text-decoration: none;font-size: 24px;font-weight: normal;margin-left: 10px;
+        margin-right: 10px;
+    }
+    #btnH:hover,#btnP:hover,#btnW:hover,#btnE:hover,#btnTT:hover{color:#585858;}
+    #mobilev1,#mobilev2{display: none;}
+</style>
+<style>
+    @media (pointer:none), (pointer:coarse)
+    {
+        #btnTT{display:none;}
+        #divToTop{display:none;}
+        iframe{width: 100%;}
+        #pc2{display: none;}
+        #pc{display: none;}
+        #divMain{width:95%;}
+        #divBtn{position: unset;}
+        #btnH,#btnP,#btnW,#btnE {font-size: unset;margin-left: 5px;margin-right: 5px;}
+        /*#divToTop{display:unset;}*/
+    }
+</style>
+<style>
+    @media (pointer:none), (pointer:coarse)
+    {
+        @media screen and (orientation:portrait)
+        {
+            #mobilev2{display: none;}
+            #mobilev1{display: inline-table;}
+            #mobilev1{position: fixed;left:0px;bottom: 0px;width: 100%;}
+            #mobilev1 td{ width: 50%; background-color: #B59CB5;}
+            #divToTop{bottom: 10%;}
+        }
+        @media screen and (orientation:landscape)
+        {
+            #mobilev1{display: none;}
+            #mobilev2{display: inline-table;}
+            #mobilev2{position: fixed;left:0px;bottom: 0px;width: 100%;}
+            #mobilev2 td{width: 25%;background-color: #B59CB5;}
+            #divToTop{bottom: 7%;}
+        }
+    }
+</style>
+
+
+
+
+<center>
+    <div id="divMain">
+        <div id="divToTop"><a href="#divMain">To Top</a></div>
+        <table id="pc2">
+            <tbody>
+                <tr>
+                    <td><a id="btnH" href="#divHigher" name="btn">→ HIGHER</a></td>
+                </tr>
+                <tr>
+                    <td><a id="btnP" href="#divProgramme" name="btn">→ PROGRAMME</a></td>
+                </tr>
+                <tr>
+                    <td><a id="btnW" href="#divWorkshops" name="btn">→ WORKSHOPS</a></td>
+                </tr>
+                <!--<tr>
+                <td><a id="btnE" href="#divEnquiries" name="btn">→ ENQUIRIES</a></td>
+            </tr>-->
+            <tr>
+                <td><a id="btnTT" href="#divMain" name="btn">↑ To Top</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="divBtn" align="center">
+        <div id="pc">
+            <a id="btnH" href="#divHigher" name="btn">HIGHER</a>
+            <a id="btnP" href="#divProgramme" name="btn">PROGRAMME</a>
+            <a id="btnW" href="#divWorkshops" name="btn">WORKSHOPS</a>
+            <!--<a id="btnE" href="#divEnquiries" name="btn">ENQUIRIES</a>-->
+        </div>
+        <table id="mobilev2">
+            <tbody>
+                <tr>
+                    <td><a id="btnH" href="#divHigher" name="btn">HIGHER</a></td>
+                    <td><a id="btnP" href="#divProgramme" name="btn">PROGRAMME</a></td>
+                    <td><a id="btnW" href="#divWorkshops" name="btn">WORKSHOPS</a></td>
+                    <td><a id="btnE" href="#divMain" name="btn">↑ To Top</a></td>
+                    <!--<td><a id="btnE" href="#divEnquiries" name="btn">ENQUIRIES</a></td>-->
+                </tr>
+            </tbody>
+        </table>
+        <table id="mobilev1">
+            <tbody>
+                <tr>
+                    <td><a id="btnH" href="#divHigher" name="btn">HIGHER</a></td>
+                    <td><a id="btnP" href="#divProgramme" name="btn">PROGRAMME</a></td>
+                </tr>
+                <tr>
+                    <td><a id="btnW" href="#divWorkshops" name="btn">WORKSHOPS</a></td>
+                    <td><a id="btnE" href="#divMain" name="btn">↑ To Top</a></td>
+                    <!--<td><a id="btnE" href="#divEnquiries" name="btn">ENQUIRIES</a></td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</center>
+
+<div style="text-align: left;">
+    <p style="color: #b09db3; font-size: 20px;">PASTOR'S FOREWORD</p>
+    <p>Dear Campferencers,</p>
+    <p>Shalom and greetings in the Name of our Lord who watches over us and continues to work in all of our lives!</p>
+    <p>The planned dates of 10-12 June 2021 were meant to be our Church Camp Dates, but due to the Covid-19 situation, we are sadly unable to go as a church family. Nevertheless, the leaders in TPMC have decided that it will still be greatly meaningful for us to gather, even in a Conference-style event with plenaries and workshops (but without the staying-in), hence the name of the event, Campference!</p>
+    <p>It has also always been the plan for these dates to be used to launch our TPMC HIGHER Core Values of Honour, Integrity, Generosity, Humility, Excellence and Rest; and that is what this Campference is all about. It is about us, as a family, becoming the kind of community that will be so compelling; that it inspires us to want to continually grow into it and enjoy it; that it draws others to want to join it and participate in it; and that gives a glimpse of what heaven may look like to all who witnesses how we love God and love one another.</p>
+    <p>This HIGHER Campference microsite serves for us like a Camp File, where information pertaining to the Campference, whether it’s the programme or timings, speakers or notes, will be kept and updated even after the Campference. Come back here after the Campference to access the plenaries and workshops as well.</p>
+    <p>So, people who are seeking to go HIGHER for God, see you at the Campference!</p>
+    <p>Growing with you,</p>
+    <p>Ps Ben Lee</p>
+</div>
+
+<p> </p>
+<div id="divHigher" style="text-align: left;">
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <h2>HIGHER</h2>
+    <p> </p>
+    <h3>HONOUR</h3>
+    <p style="text-align: center;"><strong><span style="color: #b09db3; font-size: 16px;"><i> “ Be devoted to one another in love. Honour one another above yourselves.” </i></span></strong></p>
+    <p style="text-align: center;"><span style="color: #b09db3; font-size: 16px;"><i>Romans 12:10</i></span></p>
+    <p>This means to regard and <b>relate to everyone as persons created in God’s image</b> and to <b>show respect to a person’s position and office.</b> Yet first and foremost, Jesus is worthy of all glory, honour and power [Revelations 4:11, John 5:23].</p>
+    <p><strong>To give honour to God is to live a life of genuine worship.</strong> This can be lived out in three ways:</p>
+    <p>a. Honour God with our first and best, not our leftovers, in all areas like our time, effort, gifts, skills [Proverbs 3:9-10].</p>
+    <p>b. Honour what God honours and cares about – fellow brothers and sisters in Christ; the body of Christ [Acts 9:4-5]; even outdoing each other in respecting fellow Christians [Romans 12:10]. 1 Corinthians 12:21-26 also teaches us that each person in church is important for the welfare and functioning of the church. We should not allow prejudices or self-serving attitudes to cause strife within the church or towards one another.</p>
+    <p>c. Honour everyone [1 Peter 2:17]. Every one of us was wretched, but Jesus honoured us when He became man to die for our sins so that we can be saved. Just as God values and esteems the lost, the lowly, the least, we honour God when we value and esteem others who are not yet in the Kingdom of God to share with them the good news of Jesus Christ.</p>
+    <h3> </h3>
+    <h3>INTEGRITY</h3>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;"><strong>“All you need to say is simply ‘Yes’ or ‘No’;</strong> Anything beyond this comes from the evil one”.</span></em></p>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">Matthew 5:37</span></em></p>
+    <p>Having integrity means more than just being honest. It means to be <strong>consistent with biblical truths in what we believe, say and do.</strong> It also implies being <strong>whole and undivided,</strong> not given to doublemindedness.</p>
+    <p>We can develop integrity, by first regarding biblical truth as the foundation. This requires us to read our bibles and make use of our devotional times with God as a platform to integrate our head, heart and hands. We will be confronted with issues that we may be struggling with and to seek God’s guidance for what to say and do in the real-life situations we are encountering. Some practical examples of biblical truths to live by, which go beyond honesty, and being consistent with biblical truth:</p>
+    <p>a. In the workplace, to work heartily, as for the Lord and not for men [Colossians 3:23].</p>
+    <p>b. In our relationships, to treat others as we would like to be treated, and not have double standards [Matthew 7:12].</p>
+    <p>c. In our words and actions, to say what we mean and mean what we say [Matthew 5:37].</p>
+    <h3> </h3>
+    <h3>GENEROSITY</h3>
+    <p style="text-align: center;"><em> <span style="color: #b09db3; font-size: 16px;">“Heal the sick, raise the dead, cleanse those who have leprosy, drive out demons. </span></em><strong><span style="color: #b09db3; font-size: 16px;">Freely you have received; freely give”.</span></strong></p>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">Matthew 10:8</span></em></p>
+    <p>We are exhorted to give for <strong>it is more blessed to give than to receive.</strong> God exemplifies for us the motivation for our giving. God gave his Son freely to us because He loves us. <strong>When we realise the depth of God’s love, we cannot help but be generous to others as well.</strong> When we give sacrificially and selflessly, God helps us overcome our selfish nature with the love of God.</p>
+    <p>Generosity is not just about giving money. There are many ways that we can give to serve others. We can give of our resources (time, relationships, emotions, gifts and talents etc) to serve others. When generosity comes from our hearts, we can think of ways to love others through our service.</p>
+    <h3> </h3>
+    <h3>HUMILITY</h3>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">“ Do nothing out of selfish ambition or vain conceit. <strong>Rather, in humility value others above yourselves,</strong> not looking to your own interests but each of you to the interests of the others”.</span></em></p>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">Philippians 2:3 - 4</span></em></p>
+    <p>God opposes the proud and detests those with a proud heart. Pride is treated most harshly by God because a proud person is full of himself, and there is no place for God in his life. God is unable to use and transform people who are full of themselves.</p>
+    <p>Yet being humble does not mean thinking less of oneself, passiveness, putting down one’s strengths or even self-worth. Instead, God wants us to be transformed to be like Christ. <strong>We demonstrate our humility by placing the interests of others above ours.</strong> By doing so, we would have the same mindset as Christ, who humbled himself and died on the cross for us [Philippians 2:4-8]. Jesus has every reason to be proud as He is sinless, blameless and holy, yet He considered our interests above His.</p>
+    <h3> </h3>
+    <h3>EXCELLENCE</h3>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;"><strong>“Whatever you do, work at it with all your heart, as working for the Lord,</strong> not for human masters”.</span></em></p>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">Colossians 3:23</span></em></p>
+    <p>The pursuit of excellence involves putting our heart and soul into an endeavour and doing our best. Colossians 3:23 exhorts us to put our whole heart into whatever we do as an act of worship to God, and not to make a half-hearted attempt. <strong>When we do things with excellence we reflect and represent the God we worship.</strong></p>
+    <p>We may be tempted to believe that our work in church is not significant because of the ‘minor’ role we play. However, <strong>if we are faithful in little things,</strong> <strong>God can trust us to excel in big things.</strong> There is no task too small if we put our best for God [1 Corinthians 10:31]. In the secular world, people seek excellence because incentives are offered. In the sacred world would we ease off as those incentives are not there? In God’s eyes, there is no divide between the sacred and the secular worlds.</p>
+    <h3> </h3>
+    <h3>REST</h3>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">“ Let us, therefore, <strong>make every effort to enter that rest,</strong> so that no one will perish by following their example of disobedience”.</span></em></p>
+    <p style="text-align: center;"><em><span style="color: #b09db3; font-size: 16px;">Hebrews 4:11</span></em></p>
+    <p>Rest is not the absence of, or ceasing from all activity. <strong>Resting means doing our best and trusting God with the results.</strong> We should not fall into extreme ends of not doing anything at all, neither should we rely on ourselves to do everything and not trust God. When we learn to rest/trust in the Lord, we find our antidote to discouragement, disappointment, and self-dependence. [Hebrews 4:10-11].</p>
+    <p>We are reminded to be diligent to enter rest [Hebrews 4:11] because the longer a trial or difficult situation lasts, our trust in God may be shaken. Therefore, we must make every effort to centre ourselves back to God. Psalms 23 is a good reminder to trust in the Lord who is our Shepherd, who will take care of all our needs.</p>
+</div>
+
+
+<p> </p>
+<div id="divProgramme" style="text-align: left;">
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <h2>Programme</h2>
+    <p> </p>
+    <div>
+        <h3><strong><span style="color: #b09db3;">Plenary 1: Why values are important</span></strong></h3>
+        <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/GTYBwrZMjpA" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          </center></p>
+    </div>
+    <div>
+        <h3><strong><span style="color: #b09db3;">Plenary 2: Why HIGHER? </span></strong></h3>
+        <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Why-Higher.pdf">here</a> for notes.</p>
+        <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/FUMohKK1xUI" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Why-Higher.pdf"><button class="btn"> Click here for notes. </button></a></p></center></p>
+    </div>
+    <div>
+        <h3><strong><span style="color: #b09db3;">Plenary 3: Why is Church the primary spiritual formation Community?</span></strong></h3>
+        <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Why-Church_z.pdf">here</a> for notes.</p>
+        <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/6gXE0cU4Oy0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Why-Church_z.pdf"><button class="btn"> Click here for notes. </button></a></p></center></p>
+    </div>
+</div>
+
+
+
+
+<p> </p>
+<div id="divWorkshops" style="text-align: left;">
+    <p> </p>
+    <p> </p>
+    <h2>WORKSHOPS</h2>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                    <h3><span style="color: #b09db3;">The Relationship HI-Way (Humility &amp; Integrity)</span></h3>
+                    <p>Within the church, and even in families, people are different and diverse. This can lead to painful conflict and hurt in our relationship with others. But there’s a better way. Grace and truth go hand in hand and undergirding these are the values of humility and integrity. Understand how you can apply this not only in your relationships with fellow believers in TPMC, but also in your family life.</p>
+                    <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Humility_Integritynotes.pdf">here</a> for notes.</p>
+                    <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/4Ll1FROn_9Q" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                            <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Humility_Integritynotes.pdf"><button class="btn"> Click here for notes. </button></a></p></center></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3><span style="color: #b09db3;">Building the Generosity Muscle</span></h3>
+                    <p>Generosity is like a muscle – the more we exercise it, the stronger it gets. The value of generosity is more than just giving away free things to others or giving financially. Learn the heart of what Jesus meant by “freely we receive, freely we give” and how we in turn are blessed.</p>
+                    <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Generosity-notes.pdf">here</a> for notes.</p>
+                    <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/nfcFH5ULnSo" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Generosity-notes.pdf"><button class="btn"> Click here for notes. </button></a></p></center></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3><span style="color: #b09db3;">Communicating with Honour</span></h3>
+                    <p>You may have heard the expression “sticks and stone may break my bones, but words can never hurt me.” But we know in our experiences that this is not true. Whether we have been a recipient or a giver of words that dishonour, we know this is not God’s way. Find out how you can communicate more effectively even in difficult situations with words to honour one another to have constructive outcomes.</p>
+                    <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Honour-notes.pdf">here</a> for notes.</p>
+                    <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/1jGyngkpV_0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Honour-notes.pdf"><button class="btn"> Click here for notes. </button></a></p></center></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3><span style="color: #b09db3;">A Life of Excellence not Perfectionism</span></h3>
+                    <p>Haven’t found the perfect church? We haven’t either. But we are not called to be a perfect church; we are called to excellence – in church and as Christians. How do you live, serve and work above the level of mediocrity and yet not suffocate in perfectionism? Come build a better vision for yourself and TPMC.</p>
+                    <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Excellence-notes.png">here</a> for notes.</p>
+                    <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/1Duw-y_1RD8" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Excellence-notes.png"  target="_blank"><button class="btn"> Click here for notes. </button></a></p></center></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3><span style="color: #b09db3;">The Rest - Faith Connection</span></h3>
+                    <p>Are you feeling overworked, overstretched and underappreciated? How can you find rest and keep the Sabbath when you are consumed by work and busyness? Express your emotions through drawing and colours and learn how you can care for your mental and emotional health. Most of all, find God’s goodness, wisdom and power to align back to God’s purpose for you.</p>
+                    <p>Click <a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Rest-notes.pdf">here</a> for notes.</p>
+                    <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/rxamhgem3Uw" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <p><a href="https://tpmc.org.sg/wp-content/uploads/2021/06/Rest-notes.pdf"><button class="btn"> Click here for notes. </button></a></p></center></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3><span style="color: #b09db3;">Youth: Living with Integrity in a Photo-Filtered World</span></h3>
+                    <p>Our ideals and ideas of life are influenced and affected by what we see on social media. There are even job titles of “Influencers” and “Youtubers” now. Social media is here to stay. Master it rather than let it master you. Learn how you can go against the pressures of keeping up appearances on social media and use social media for truth in love; and be a real influencer for God.</p>
+                    <p><center><iframe title="YouTube video player" src="https://www.youtube.com/embed/ueeAzNKDDZA" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        </center></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3><span style="text-decoration: underline;">VALUES IN ACTION</span></h3>
+    <p><strong>Honour</strong></p>
+    <ul>
+        <li>
+            <p>Be punctual for all plenary sessions and workshops.</p>
+        </li>
+        <li>
+            <p>For each segment/activity, learn the names of 3 new people and greet them.</p>
+        </li>
+    </ul>
+    <p><strong>Integrity</strong></p>
+    <ul>
+        <li>
+            <p>Share your views honestly in love; we agree to disagree.</p>
+        </li>
+    </ul>
+    <p><strong>Generosity</strong></p>
+    <ul>
+        <li>
+            <p>Come to the Campference with the attitude of “How can I contribute today?” (your presence, your ideas, your help etc.)</p>
+        </li>
+    </ul>
+    <p><strong>Humility</strong></p>
+    <ul>
+        <li>
+            <p>Seek to understand and listen before speaking, respect other’s opinions.</p>
+        </li>
+    </ul>
+    <p><strong>Excellence</strong></p>
+    <ul>
+        <li>
+            <p>Actively participate in the workshops.</p>
+        </li>
+    </ul>
+    <p><strong>Rest</strong></p>
+    <ul>
+        <li>
+            <p>Come with an expectant heart to be refreshed by God through the Campference</p>
+        </li>
+    </ul>
+</div>

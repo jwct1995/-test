@@ -1,0 +1,75 @@
+
+
+
+
+if(screen.availHeight > screen.availWidth)
+{
+alert("v1");
+}
+else
+{
+    alert("v2");
+}
+
+
+<p><script>
+$(document).ready(function()
+{
+     /*alert("hi 1");*/
+var h=$("#diva").html();
+$("#diva").html(" ");
+var fe=$("#diva").closest(".item");
+$(h).prependTo(fe);
+     /*alert("hi 2");*/
+});
+</script></p>
+<div id="diva">
+<div id="divb"><style>
+#divbutton{<br />
+    background-color: #7fffd461;<br />
+    position: absolute;<br />
+    bottom: 10%;<br />
+    left: 5%;<br />
+    display: block;<br />
+    z-index: 9999<br />
+}<br />
+#btn1{background-color: #7575ff69;}<br />
+#btn2{background-color: #ffc0cb7a;}<br />
+#divbutton div{<br />
+	display: inline-block;<br />
+	border-radius: 30px;<br />
+	border-style: solid;<br />
+    border-color: #676767;<br />
+	margin:5px;<br />
+    padding: 10px 50px 10px 50px;<br />
+    cursor: pointer;<br />
+}<br />
+</style> <style>
+#divbutton div:hover{<br />
+	background-color: white;<br />
+	color: black;<br />
+	border-color: white;<br />
+	font-weight: bold;<br />
+}<br />
+</style> <style>
+@media (pointer:none), (pointer:coarse) {<br />
+	#divbutton<br />
+	{<br />
+		width: 5%;<br />
+		left: 8%;<br />
+		background-color: #fbff0038;<br />
+	}<br />
+	#btn1{<br />
+		width: 50px;<br />
+	}<br />
+	#btn2{<br />
+		width: 120px;<br />
+	}<br />
+}<br />
+</style>
+<div id="divbutton">
+<div id="btn1">Github</div>
+<div id="btn2">Googlex</div>
+</div>
+</div>
+</div>

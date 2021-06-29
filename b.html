@@ -1,0 +1,136 @@
+data-label="Date"
+<style>
+iframe{}
+table{ /*background-color:aqua;*/ }
+.ptd1{ /*background-color: yellow;*/width: 90px;}
+.ptd2{ /*background-color: red;*/width: 120px;text-align: center;}
+.ptd3{ /*background-color: pink;*/}
+.ptd4{ /*background-color: green;*/text-align: center;width: 100px;}
+#plhide{display: none;}
+/*#programmeTbl tr td:nth-child(1){ background-color: yellow;width: 90px;}
+#programmeTbl tr td:nth-child(2){ background-color: red;}
+#programmeTbl tr td:nth-child(3){ background-color: pink;}
+#programmeTbl tr td:nth-child(4){ background-color: green;}
+
+@media screen and (max-width: 600px)
+{*/
+@media (pointer:none), (pointer:coarse)
+{
+
+    /*iframe{width: 700px;height: 400px;}*/
+    iframe
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .ptd4
+    {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+    }
+
+    .ptd1{ /*background-color: yellow;*/width:unset; text-align: right;}
+    .ptd2{ /*background-color: red;*/width: unset;text-align: unset;text-align: right;}
+    .ptd3{ /*background-color: pink;*/text-align: right;}
+
+    /*.ptd3 p{ display: flex; width: 100%;}*/
+    .ptd3 p{ display: table;width: 100%;}
+    .ptd3 p strong{ width: 100%;}
+    .ptd4{ /*background-color: green;*/text-align: unset;width: unset;}
+    #plhide{display: block;}
+    table
+    {
+        border: 0;
+    }
+    table thead
+    {
+        display: none;
+    }
+    table tr
+    {
+        border-bottom: 2px solid #ddd;
+        display: block;
+        margin-bottom: 40px;
+    }
+    table td
+    {
+        border-bottom: 1px dotted #ccc;
+        display: block;
+        font-size: 40px;
+    }
+    table td:last-child
+    {
+        border-bottom: 0;
+    }
+    table td:before
+    {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+</style>
+<!--
+data-label="Date"
+data-label="Time"
+data-label="Programme"
+data-label="Video"
+-->
+<table id="programmeTbl" style="width: 100%; border: 3px solid #e5e5e5;padding: 20px;">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Programme</th>
+            <th>Video</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td class="ptd1" data-label="Date">10 June (Thu)</td>
+            <td class="ptd2" data-label="Time">8.30 – 9.30pm</td>
+            <td class="ptd3" data-label="Programme">
+                <p><strong>Plenary 1: Why Values are important</strong></p>
+                <p>Rev Stanley Chua</p>
+                <p><strong>Blessing Draw </strong></p>
+            </td>
+            <td class="ptd4" data-label="Video"><p><iframe title="YouTube video player" src="http://www.youtube.com/embed/GTYBwrZMjpA" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></td>
+        </tr>
+        <tr>
+            <td class="ptd1" data-label="Date">11 June (Fri)</td>
+            <td class="ptd2" data-label="Time">8.30 – 9.30pm</td>
+            <td class="ptd3" data-label="Programme">
+                <p><strong>Plenary 2: Why HIGHER?</strong></p>
+                <p>Rev Benjamin Lee</p>
+                <p><strong><a style="text-decoration: none;" href="#hahc">Holiday at Home competition</a></strong></p>
+            </td>
+            <td class="ptd4" data-label="Video"><p><iframe title="YouTube video player" src="http://www.youtube.com/embed/FUMohKK1xUI" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></td>
+        </tr>
+
+        <tr>
+            <td rowspan="2" class="ptd1" data-label="Date">12 June (Sat)</td>
+            <td class="ptd2" data-label="Time">9.00 – 10.15am</td>
+            <td class="ptd3" data-label="Programme">
+                <p><strong>Workshops on HIGHER Values </strong></p>
+            </td>
+            <td class="ptd4" data-label="Video"><p><iframe title="YouTube video player" src="http://www.youtube.com/embed/6gXE0cU4Oy0" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></td>
+        </tr>
+        <tr>
+            <td id="plhide" rowspan="2" class="ptd1" data-label="Date">12 June (Sat)</td>
+            <td class="ptd2" data-label="Time">10.30 – 11.30am</td>
+            <td class="ptd3" data-label="Programme">
+                <p><strong>Plenary 3: Why is Church the primary spiritual formation community?</strong></p>
+                <p>Rev Benjamin Lee</p>
+                <p><strong>Campference Quiz </strong></p>
+            </td>
+            <td class="ptd4" data-label="Video"></td>
+        </tr>
+    </tbody>
+</table>
